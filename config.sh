@@ -17,8 +17,9 @@ sudo flatpak update -y
 echo "${GREEN}${bold}##changing theme..${NC}${normal}"
 sudo lookandfeeltool -a org.kde.breezedark.desktop
 
-echo "${GREEN}${bold}##Installing xp-pen drivers..${NC}${normal}"
+echo "${GREEN}${bold}##Downloading xp-pen drivers..${NC}${normal}"
 sudo curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
+echo "${GREEN}${bold}##Installing xp-pen drivers..${NC}${normal}"
 sudo dpkg -i xpen.deb
 
 echo "${GREEN}${bold}##Installing Rust..${NC}${normal}"
@@ -36,9 +37,34 @@ sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafae
 echo "${GREEN}${bold}##Installing nvidia-driver-510..${NC}${normal}"
 sudo apt install nvidia-driver-510 -y
 
-echo "${GREEN}${bold}##Update & reboot..${NC}${normal}"
+echo "${GREEN}${bold}##Update & removing xpen.deb..${NC}${normal}"
 sudo pkcon update -y
 sudo rm xpen.deb
 sudo flatpak update -y
+
+echo "${GREEN}${bold}##setting display settings to 2560x1440 164Hz..${NC}${normal}"
 sudo xrandr --output DP-2 --mode 2560x1440 --rate 164.06
-sudo reboot
+
+
+#remove script y/n
+   echo -n "${RED}${bold}remove script?${NC}${normal} (y/n)"
+   read reply
+
+   if [ "$reply" = y -o "$reply" = Y ]
+   then
+      rm -- "$0"
+      echo "${GREEN}${bold}script removed${NC}${normal}"
+   else
+      echo "${RED}${bold}script not removed${NC}${normal}"
+   fi
+
+#reboot y/n
+    echo -n "${RED}${bold}reboot?${NC}${normal} (y/n)"
+    read reply
+
+    if [ "$reply" = y -o "$reply" = Y ]
+    then
+        sudo reboot
+    else
+       echo "${RED}${bold}stopping reboot${NC}${normal}"
+    fi
