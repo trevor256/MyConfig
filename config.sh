@@ -45,4 +45,3 @@ sudo rm xpen.deb
 sudo flatpak update -y
 sudo xrandr --output DP-2 --mode 2560x1440 --rate 164.06
 sudo reboot
-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
