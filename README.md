@@ -1,2 +1,5 @@
 # new_linux_install
-A BASH script to configure new linux installs how I like it
+A BASH script to configure a new Linux install on KDE Neon
+
+# run
+sh config.sh
