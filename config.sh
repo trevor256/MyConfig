@@ -12,6 +12,7 @@ normal=$(tput sgr0)
 
 echo "${GREEN}${bold}##Update..${NC}${normal}"
 sudo pkcon update -y
+sudo flatpak update -y
 
 echo "${GREEN}${bold}##changing theme..${NC}${normal}"
 sudo lookandfeeltool -a org.kde.breezedark.desktop
@@ -41,5 +42,7 @@ sudo apt install nvidia-driver-510 -y
 echo "${GREEN}${bold}##Update & reboot..${NC}${normal}"
 sudo pkcon update -y
 sudo rm xpen.deb
+sudo flatpak update -y
 sudo xrandr --output DP-2 --mode 2560x1440 --rate 164.06
 sudo reboot
+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
