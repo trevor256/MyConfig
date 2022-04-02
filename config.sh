@@ -33,9 +33,6 @@ sudo apt-get install kdenlive krita docker-ce docker-ce-cli containerd.io -y
 echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBoxes, godotengine..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom -y
 
-echo "${GREEN}${bold}##Configure Atom..${NC}${normal}"
-sudo apt-get install kdenlive krita docker-ce docker-ce-cli containerd.io -y
-
 echo "${GREEN}${bold}##Installing nvidia-driver-510..${NC}${normal}"
 sudo apt install nvidia-driver-510 -y
 
