@@ -1,5 +1,9 @@
-# new_linux_install
-A BASH script to configure a new Linux install on KDE Neon
+# BASH script to install & config new KDE Neon Linux install
+### Download
+```
 
-# run
-sh config.sh
+```
+### Run
+```
+sudo sh LiuxConfig/config.sh
+```
