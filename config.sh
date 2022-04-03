@@ -10,10 +10,11 @@ NC='\033[0m' # No Color
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-echo "${GREEN}${bold}##Update..${NC}${normal}"
+lookandfeeltool -a org.kde.breezedark.desktop
+
+echo "${GREEN}${bold}##Updating..${NC}${normal}"
 sudo pkcon update -y
 sudo apt-get update
-sudo snap update
 sudo flatpak update -y
 
 echo "${GREEN}${bold}##Downloading xp-pen drivers..${NC}${normal}"
@@ -38,17 +39,13 @@ sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafae
 
 echo "${GREEN}${bold}##changing theme..${NC}${normal}"
 lookandfeeltool -a org.kde.breezedark.desktop
-sudo lookandfeeltool -a org.kde.breezedark.desktop
-lookandfeeltool -a org.kde.breezedark.desktop
 
 echo "${GREEN}${bold}##downloading github projects to github dir..${NC}${normal}"
 mkdir github
-cd github
-git clone https://github.com/trevor256/trevor256.com.git
-git clone https://github.com/trevor256/LinuxConfig.git
-git clone https://github.com/trevor256/FileCodify.git
-git clone https://github.com/trevor256/rusty.git
-cd
+git clone https://github.com/trevor256/trevor256.com.git github
+git clone https://github.com/trevor256/LinuxConfig.git github
+git clone https://github.com/trevor256/FileCodify.git github
+git clone https://github.com/trevor256/rusty.git github
 sudo chmod -R 777 github
 
 #Install NVIDIA Driver?
@@ -66,7 +63,6 @@ echo "${GREEN}${bold}##Finishing up..${NC}${normal}"
 sudo rm xpen.deb
 sudo pkcon update -y
 sudo apt-get update
-sudo snap update
 sudo flatpak update -y
 sudo apt autoremove
 
