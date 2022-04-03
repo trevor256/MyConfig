@@ -43,10 +43,12 @@ lookandfeeltool -a org.kde.breezedark.desktop
 
 echo "${GREEN}${bold}##downloading github projects to github dir..${NC}${normal}"
 mkdir github
+cd github
 git clone https://github.com/trevor256/trevor256.com.git
 git clone https://github.com/trevor256/LinuxConfig.git
 git clone https://github.com/trevor256/FileCodify.git
 git clone https://github.com/trevor256/rusty.git
+cd
 
 #Install NVIDIA Driver?
    echo -n "${RED}${bold}Install NVIDIA Driver?${NC}${normal} (y/n)"
