@@ -12,6 +12,8 @@ normal=$(tput sgr0)
 
 echo "${GREEN}${bold}##Update..${NC}${normal}"
 sudo pkcon update -y
+sudo apt-get update
+sudo snap update
 sudo flatpak update -y
 
 echo "${GREEN}${bold}##Downloading xp-pen drivers..${NC}${normal}"
@@ -21,7 +23,7 @@ sudo dpkg -i xpen.deb
 
 echo "${GREEN}${bold}##Installing Rust..${NC}${normal}"
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-echo 1
+sudo apt-get install rustc cargo
 
 echo "${GREEN}${bold}##Installing Node 17 & NPM..${NC}${normal}"
 curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
@@ -35,6 +37,8 @@ echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBox
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom -y
 
 echo "${GREEN}${bold}##changing theme..${NC}${normal}"
+lookandfeeltool -a org.kde.breezedark.desktop
+sudo lookandfeeltool -a org.kde.breezedark.desktop
 lookandfeeltool -a org.kde.breezedark.desktop
 
 echo "${GREEN}${bold}##downloading github projects to github dir..${NC}${normal}"
@@ -58,6 +62,8 @@ git clone https://github.com/trevor256/rusty.git
 echo "${GREEN}${bold}##Finishing up..${NC}${normal}"
 sudo rm xpen.deb
 sudo pkcon update -y
+sudo apt-get update
+sudo snap update
 sudo flatpak update -y
 sudo apt autoremove
 
