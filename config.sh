@@ -15,7 +15,7 @@ sudo pkcon update -y
 sudo flatpak update -y
 
 echo "${GREEN}${bold}##changing theme..${NC}${normal}"
-sudo lookandfeeltool -a org.kde.breezedark.desktop
+lookandfeeltool -a org.kde.breezedark.desktop
 
 echo "${GREEN}${bold}##Downloading xp-pen drivers..${NC}${normal}"
 sudo curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
@@ -42,10 +42,6 @@ sudo pkcon update -y
 sudo rm xpen.deb
 sudo flatpak update -y
 
-echo "${GREEN}${bold}##setting display settings to 2560x1440 164Hz..${NC}${normal}"
-sudo xrandr --output DP-2 --mode 2560x1440 --rate 164.06
-
-
 #remove script y/n
    echo -n "${RED}${bold}remove script?${NC}${normal} (y/n)"
    read reply
@@ -64,6 +60,8 @@ sudo xrandr --output DP-2 --mode 2560x1440 --rate 164.06
 
     if [ "$reply" = y -o "$reply" = Y ]
     then
+      #setting display settings to 2560x1440 164Hz..
+        sudo xrandr --output DP-2 --mode 2560x1440 --rate 164.06
         sudo reboot
     else
        echo "${RED}${bold}stopping reboot${NC}${normal}"
