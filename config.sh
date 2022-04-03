@@ -41,11 +41,10 @@ echo "${GREEN}${bold}##changing theme..${NC}${normal}"
 lookandfeeltool -a org.kde.breezedark.desktop
 
 echo "${GREEN}${bold}##downloading github projects to github dir..${NC}${normal}"
-mkdir github
-git clone https://github.com/trevor256/trevor256.com.git github
-git clone https://github.com/trevor256/LinuxConfig.git github
-git clone https://github.com/trevor256/FileCodify.git github
-git clone https://github.com/trevor256/rusty.git github
+git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com
+git clone https://github.com/trevor256/LinuxConfig.git github/LinuxConfig
+git clone https://github.com/trevor256/FileCodify.git github/FileCodify
+git clone https://github.com/trevor256/rusty.git github/rusty
 sudo chmod -R 777 github
 
 #Install NVIDIA Driver?
