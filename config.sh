@@ -25,8 +25,14 @@ sudo dpkg -i xpen.deb
 echo "${GREEN}${bold}##Installing Rust..${NC}${normal}"
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-echo "${GREEN}${bold}##Installing Nodejs, NPM, kdenlive, krita, & Docker..${NC}${normal}"
-sudo apt-get install nodejs npm kdenlive krita docker -y
+echo "${GREEN}${bold}##Installing Node 17, NPM..${NC}${normal}"
+curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt install nodejs -y
+curl -qL https://www.npmjs.com/install.sh | sh
+sudo apt install npm -y
+
+echo "${GREEN}${bold}##Installing  NPM, kdenlive, krita, & Docker..${NC}${normal}"
+sudo apt-get install npm kdenlive krita docker -y
 
 echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBoxes, godotengine..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom -y
@@ -38,6 +44,7 @@ echo "${GREEN}${bold}##Update & removing xpen.deb..${NC}${normal}"
 sudo rm xpen.deb
 sudo pkcon update -y
 sudo flatpak update -y
+sudo apt autoremove
 
 #remove script y/n
    echo -n "${RED}${bold}remove script?${NC}${normal} (y/n)"
