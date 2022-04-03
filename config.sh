@@ -49,6 +49,7 @@ git clone https://github.com/trevor256/LinuxConfig.git
 git clone https://github.com/trevor256/FileCodify.git
 git clone https://github.com/trevor256/rusty.git
 cd
+sudo chmod -R 777 github
 
 #Install NVIDIA Driver?
    echo -n "${RED}${bold}Install NVIDIA Driver?${NC}${normal} (y/n)"
