@@ -28,8 +28,8 @@ sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo "${GREEN}${bold}##Installing Node & NPM..${NC}${normal}"
 sudo apt install nodejs npm -y
 
-echo "${GREEN}${bold}##Installing Atom, kdenlive, krita, & Docker..${NC}${normal}"
-sudo apt-get install kdenlive krita docker-ce docker-ce-cli containerd.io -y
+echo "${GREEN}${bold}##Installing, kdenlive, krita, & Docker..${NC}${normal}"
+sudo apt-get install kdenlive krita docker -y
 
 echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBoxes, godotengine..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom -y
