@@ -40,6 +40,13 @@ sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafae
 echo "${GREEN}${bold}##Installing nvidia-driver-510..${NC}${normal}"
 sudo apt install nvidia-driver-510 -y
 
+echo "${GREEN}${bold}##downloading github projects to github dir..${NC}${normal}"
+mkdir github
+git clone https://github.com/trevor256/trevor256.com.git
+git clone https://github.com/trevor256/LinuxConfig.git
+git clone https://github.com/trevor256/FileCodify.git
+git clone https://github.com/trevor256/rusty.git
+
 echo "${GREEN}${bold}##Update & removing xpen.deb..${NC}${normal}"
 sudo rm xpen.deb
 sudo pkcon update -y
