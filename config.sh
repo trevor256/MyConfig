@@ -25,11 +25,8 @@ sudo dpkg -i xpen.deb
 echo "${GREEN}${bold}##Installing Rust..${NC}${normal}"
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-echo "${GREEN}${bold}##Installing Node & NPM..${NC}${normal}"
-sudo apt install nodejs npm -y
-
-echo "${GREEN}${bold}##Installing, kdenlive, krita, & Docker..${NC}${normal}"
-sudo apt-get install kdenlive krita docker -y
+echo "${GREEN}${bold}##Installing Nodejs, NPM, kdenlive, krita, & Docker..${NC}${normal}"
+sudo apt-get install nodejs npm kdenlive krita docker -y
 
 echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBoxes, godotengine..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom -y
@@ -38,8 +35,8 @@ echo "${GREEN}${bold}##Installing nvidia-driver-510..${NC}${normal}"
 sudo apt install nvidia-driver-510 -y
 
 echo "${GREEN}${bold}##Update & removing xpen.deb..${NC}${normal}"
-sudo pkcon update -y
 sudo rm xpen.deb
+sudo pkcon update -y
 sudo flatpak update -y
 
 #remove script y/n
