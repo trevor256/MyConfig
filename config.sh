@@ -11,14 +11,9 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 echo "${GREEN}${bold}##Updating..${NC}${normal}"
-sudo pkcon update -y
 sudo apt-get update
 sudo flatpak update -y
-
-echo "${GREEN}${bold}##Downloading xp-pen drivers..${NC}${normal}"
-sudo curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
-echo "${GREEN}${bold}##Installing xp-pen drivers..${NC}${normal}"
-sudo dpkg -i xpen.deb
+sudo pkcon update -y
 
 echo "${GREEN}${bold}##Installing Rust..${NC}${normal}"
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -45,7 +40,17 @@ git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
 git clone https://github.com/trevor256/rusty.git github/rusty/
 sudo chmod -R 777 github
 
-#Install NVIDIA Driver?
+#xpen driver
+echo "${GREEN}${bold}##Download & install xpen drivers?${NC}${normal}"
+ if [ "$reply" = y -o "$reply" = Y ]
+   then
+      sudo curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
+      sudo dpkg -i xpen.deb
+   else
+      echo "${RED}${bold}xpen Driver not installed${NC}${normal}"
+   fi
+
+#NVIDIA driver
    echo -n "${RED}${bold}Install NVIDIA Driver?${NC}${normal} (y/n)"
    read reply
 
@@ -58,9 +63,9 @@ sudo chmod -R 777 github
 
 echo "${GREEN}${bold}##Finishing up..${NC}${normal}"
 sudo rm xpen.deb
-sudo pkcon update -y
 sudo apt-get update
 sudo flatpak update -y
+sudo pkcon update -y
 sudo apt autoremove
 
 #remove script y/n
