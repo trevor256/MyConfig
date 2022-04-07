@@ -11,7 +11,7 @@ Script will
  4. flatpak installs blender, Inkscape, blankets, easyssh, gnomeBoxes, godotengine
  5. changes theme to kde.breezedark
  6. git clones my github projects
- 7. asks to install drivers xpen, NVIDIA-510
+ 7. asks to install drivers xpen, nvidia-510
  8. removes xpen.deb
  9. updates apt, flatpak, pkcon
  10. asks to remove the script and reboot
