@@ -4,9 +4,8 @@
 curl https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh -o config.sh 
 sudo sh config.sh
 ```
- The script will
- 
- 1. update apt, flatpak, and pkcon
+Script will
+ 1. updates apt, flatpak, pkcon
  2. installs langs Rust, Node-17
  3. apt installs kdenlive, krita, & bocker
  4. flatpak installs blender, Inkscape, blankets, easyssh, gnomeBoxes, godotengine
@@ -14,5 +13,5 @@ sudo sh config.sh
  6. git clones my github projects
  7. asks to install drivers xpen, NVIDIA-510
  8. removes xpen.deb
- 9. update apt, flatpak, and pkcon
+ 9. updates apt, flatpak, pkcon
  10. asks to remove the script and reboot
