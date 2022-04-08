@@ -24,6 +24,19 @@ curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 sudo apt-get install -y nodejs
 curl -qL https://www.npmjs.com/install.sh | sh
 
+echo "${GREEN}${bold}##Installing AWS CLI..${NC}${normal}"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws configure
+
+echo "${GREEN}${bold}##Installing GCP CLI..${NC}${normal}"
+sudo apt-get install apt-transport-https ca-certificates gnupg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update && sudo apt-get install google-cloud-cli
+gcloud init
+
 echo "${GREEN}${bold}##Installing kdenlive, krita, & Docker..${NC}${normal}"
 sudo apt-get install kdenlive krita docker -y
 
