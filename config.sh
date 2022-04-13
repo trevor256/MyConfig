@@ -19,10 +19,11 @@ echo "${GREEN}${bold}##Installing Rust..${NC}${normal}"
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo apt-get install rustc cargo
 
-echo "${GREEN}${bold}##Installing Node 17 & NPM..${NC}${normal}"
+echo "${GREEN}${bold}##Installing Node 17 & NPM yarn..${NC}${normal}"
 curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 sudo apt-get install -y nodejs
 curl -qL https://www.npmjs.com/install.sh | sh
+sudo npm install --global yarn
 
 echo "${GREEN}${bold}##Installing AWS CLI..${NC}${normal}"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -38,8 +39,8 @@ sudo apt-get update && sudo apt-get install google-cloud-cli
 echo "${GREEN}${bold}##Installing kdenlive, krita, & Docker..${NC}${normal}"
 sudo apt-get install kdenlive krita docker -y
 
-echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBoxes, godotengine..${NC}${normal}"
-sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom -y
+echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBoxes, godotengine, videodownloader..${NC}${normal}"
+sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom com.github.unrud.VideoDownloader-y
 
 echo "${GREEN}${bold}##changing theme..${NC}${normal}"
 lookandfeeltool -a org.kde.breezedark.desktop
