@@ -36,6 +36,11 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install google-cloud-cli
 
+echo "${GREEN}${bold}##Installing terraform CLI..${NC}${normal}"
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install terraform
+
 echo "${GREEN}${bold}##Installing kdenlive, krita, & Docker..${NC}${normal}"
 sudo apt-get install kdenlive krita docker -y
 
