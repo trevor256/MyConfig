@@ -23,7 +23,7 @@ source ~/.profile
 
 echo "${GREEN}${bold}##Installing Rust..${NC}${normal}"
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-sudo apt-get install rustc cargo
+sudo apt-get install rustc cargo -y
 
 echo "${GREEN}${bold}##Installing Node 17 & NPM yarn..${NC}${normal}"
 curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
@@ -40,7 +40,7 @@ echo "${GREEN}${bold}##Installing GCP CLI..${NC}${normal}"
 sudo apt-get install apt-transport-https ca-certificates gnupg
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-sudo apt-get update && sudo apt-get install google-cloud-cli
+sudo apt-get update && sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN}${bold}##Installing terraform CLI..${NC}${normal}"
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
