@@ -58,7 +58,6 @@ echo "${GREEN}${bold}##downloading github projects to github dir..${NC}${normal}
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
 git clone https://github.com/trevor256/LinuxConfig.git github/LinuxConfig/
 git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
-git clone https://github.com/trevor256/rusty.git github/rusty/
 sudo chmod -R 777 github
 
 #xpen driver
