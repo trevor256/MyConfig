@@ -16,8 +16,10 @@ sudo flatpak update -y
 sudo pkcon update -y
 
 echo "${GREEN}${bold}##Installing GO..${NC}${normal}"
-sudo curl https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
+sudo curl -OL https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
+sudo sudo tar -C /usr/local -xvf go1.18.1.linux-amd64.tar.gz
+sudo echo 'export PATH=$PATH:/usr/local/go/bin' >>~/.profile
+source ~/.profile
 
 echo "${GREEN}${bold}##Installing Rust..${NC}${normal}"
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
