@@ -47,8 +47,8 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install terraform
 
-echo "${GREEN}${bold}##Installing kdenlive, krita, & Docker..${NC}${normal}"
-sudo apt-get install kdenlive krita docker -y
+echo "${GREEN}${bold}##Installing kdenlive, krita, tmux & Docker..${NC}${normal}"
+sudo apt-get install kdenlive krita tmux docker -y
 
 echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBoxes, godotengine, videodownloader Nixwriter..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
