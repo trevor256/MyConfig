@@ -46,9 +46,9 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install terraform
 
-echo "${GREEN}${bold}Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, & Docker..${NC}${normal}"
+echo "${GREEN}${bold}Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, Docker, ffmpeg..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
-sudo apt-get install kdenlive krita docker -y
+sudo apt-get install kdenlive krita docker ffmpeg -y
 
 echo "${GREEN}${bold}Downloading github projects to github dir..${NC}${normal}"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
