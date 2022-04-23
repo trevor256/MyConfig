@@ -10,7 +10,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 echo "${GREEN}${bold}Updating..${NC}${normal}"
-pkcon refresh -y && pkcon update -y
+pkcon refresh && pkcon update -y
 
 echo "${GREEN}${bold}Installing GO..${NC}${normal}"
 curl -OL https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
@@ -72,7 +72,7 @@ read reply
 echo "${GREEN}${bold}##Finishing up..${NC}${normal}"
 rm xpen.deb
 rm go1.18.1.linux-amd64.tar.gz
-pkcon refresh -y && pkcon update -y
+pkcon refresh && pkcon update -y
 
     echo -n "${RED}${bold}remove config.sh script and reboot?${NC}${normal} (y/n)"
     read reply
