@@ -3,15 +3,14 @@
 #  Bash script that configuers a new 
 #  linux host system (KDE NEON)
 #####################################
-
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-echo "${GREEN}${bold}##changing theme..${NC}${normal}"
-bash lookandfeeltool -a org.kde.breezedark.desktop
+echo "${GREEN}${bold}changing theme..${NC}${normal}"
+lookandfeeltool -a org.kde.breezedark.desktop
 
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
@@ -50,72 +49,45 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 apt-get update && sudo apt-get install google-cloud-cli -y
 
-echo "${GREEN}${bold}##Installing terraform CLI..${NC}${normal}"
+echo "${GREEN}${bold}Installing terraform CLI..${NC}${normal}"
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 apt-get update && sudo apt-get install terraform
 
-echo "${GREEN}${bold}##Installing kdenlive, krita, & Docker..${NC}${normal}"
+echo "${GREEN}${bold}Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, & Docker..${NC}${normal}"
+flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
 apt-get install kdenlive krita docker -y
 
-echo "${GREEN}${bold}##Installing blender, Inkscape, Blankets, easyssh, gnomeBoxes, godotengine, videodownloader Nixwriter..${NC}${normal}"
-flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.rafaelmardojai.Blanket com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
-
-
-echo "${GREEN}${bold}##downloading github projects to github dir..${NC}${normal}"
+echo "${GREEN}${bold}Downloading github projects to github dir..${NC}${normal}"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
 git clone https://github.com/trevor256/LinuxConfig.git github/LinuxConfig/
 git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
 chmod -R 777 github
 
-
-#xpen driver
-echo "${GREEN}${bold}##Download & install xpen drivers?${NC}${normal}"
+echo "${GREEN}${bold}Download & install xpen and NVIDIA drivers?${NC}${normal}"
+read reply
  if [ "$reply" = y -o "$reply" = Y ]
    then
       curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
       dpkg -i xpen.deb
-   else
-      echo "${RED}${bold}xpen Driver not installed${NC}${normal}"
-   fi
-
-
-#NVIDIA driver
-   echo -n "${RED}${bold}Install NVIDIA Driver?${NC}${normal} (y/n)"
-   read reply
-   if [ "$reply" = y -o "$reply" = Y ]
-   then
       apt-get install nvidia-driver-510 -y
    else
-      echo "${RED}${bold}NVIDIA Driver not installed${NC}${normal}"
+      echo "${RED}${bold}Drivers not installed${NC}${normal}"
    fi
-
 
 echo "${GREEN}${bold}##Finishing up..${NC}${normal}"
 rm xpen.deb
 pkcon update -y
 flatpak update -y
 
-
-   echo -n "${RED}${bold}remove config.sh script?${NC}${normal} (y/n)"
-   read reply
-   if [ "$reply" = y -o "$reply" = Y ]
-   then
-      rm -- "$0"
-      echo "${GREEN}${bold}config.sh script removed${NC}${normal}"
-   else
-      echo "${RED}${bold}config.sh script not removed${NC}${normal}"
-   fi
-
-
-
-    echo -n "${RED}${bold}reboot?${NC}${normal} (y/n)"
+    echo -n "${RED}${bold}remove config.sh script and reboot?${NC}${normal} (y/n)"
     read reply
     if [ "$reply" = y -o "$reply" = Y ]
     then
       #setting display settings to 2560x1440 164Hz..
         xrandr --output DP-2 --mode 2560x1440 --rate 164.06
+        rm -- "$0"
         reboot
     else
-       echo "${RED}${bold}stopped reboot${NC}${normal}"
+       echo "${RED}${bold}stopped reboot and config.sh script not removed${NC}${normal}"
     fi
