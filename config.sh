@@ -9,9 +9,6 @@ NC='\033[0m'
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-echo "${GREEN}${bold}changing theme..${NC}${normal}"
-lookandfeeltool -a org.kde.breezedark.desktop
-
 echo "${GREEN}${bold}Updating..${NC}${normal}"
 sudo pkcon update -y 
 sudo flatpak update -y
@@ -59,7 +56,10 @@ git clone https://github.com/trevor256/LinuxConfig.git github/LinuxConfig/
 git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
 chmod -R 777 github
 
-echo "${GREEN}${bold}Download & install xpen and NVIDIA drivers?${NC}${normal}"
+echo "${GREEN}${bold}changing theme..${NC}${normal}"
+lookandfeeltool -a org.kde.breezedark.desktop
+
+echo "${GREEN}${bold}Download & install xpen and NVIDIA drivers?${NC}${normal} (y/n)"
 read reply
  if [ "$reply" = y -o "$reply" = Y ]
    then
