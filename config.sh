@@ -10,7 +10,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 echo "${GREEN}${bold}Updating..${NC}${normal}"
-pkcon refresh && pkcon update
+sudo pkcon refresh && sudo pkcon update
 
 echo "${GREEN}${bold}Installing GO..${NC}${normal}"
 curl -OL https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
