@@ -20,6 +20,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >>~/.profile
 sudo source ~/.profile
 
 echo "${GREEN}${bold}Installing Rust..${NC}${normal}"
+echo 1
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo apt-get install rustc cargo -y
 
