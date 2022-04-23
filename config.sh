@@ -10,8 +10,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 echo "${GREEN}${bold}Updating..${NC}${normal}"
-sudo pkcon update -y 
-sudo flatpak update -y
+sudo pkcon refresh && sudo pkcon update
 
 echo "${GREEN}${bold}Installing GO..${NC}${normal}"
 curl -OL https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
@@ -39,7 +38,7 @@ echo "${GREEN}${bold}Installing GCP CLI..${NC}${normal}"
 sudo apt-get install apt-transport-https ca-certificates gnupg
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-sudo apt-get update && sudo apt-get install google-cloud-cli -y
+sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN}${bold}Installing terraform CLI..${NC}${normal}"
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
@@ -73,8 +72,7 @@ read reply
 echo "${GREEN}${bold}##Finishing up..${NC}${normal}"
 sudo rm xpen.deb
 sudo rm go1.18.1.linux-amd64.tar.gz
-sudo pkcon update -y
-sudo flatpak update -y
+sudo pkcon refresh && sudo pkcon update
 
     echo -n "${RED}${bold}remove config.sh script and reboot?${NC}${normal} (y/n)"
     read reply
