@@ -2,7 +2,7 @@
 ### Download & Run
 ```
 curl https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh -o config.sh
-sh config.sh
+sudo sh config.sh
 ```
 Script will
  1. changes theme to kde.breezedark
