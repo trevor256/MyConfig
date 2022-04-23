@@ -21,8 +21,7 @@ sudo source ~/.profile
 
 echo "${GREEN}${bold}Installing Rust..${NC}${normal}"
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
-1
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
 sudo apt-get install rustc cargo -y
 
 echo "${GREEN}${bold}Installing Node 17 & NPM yarn..${NC}${normal}"
