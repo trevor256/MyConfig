@@ -1,7 +1,7 @@
 # script for configuring new KDE Neon install
 ### Download & Run
 ```
-curl https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh -o config.sh 
+curl https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh
 sudo sh config.sh
 ```
 Script will
