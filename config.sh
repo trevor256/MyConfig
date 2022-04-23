@@ -74,6 +74,7 @@ read reply
 
 echo "${GREEN}${bold}##Finishing up..${NC}${normal}"
 sudo rm xpen.deb
+sudo rm go1.18.1.linux-amd64.tar.gz
 sudo pkcon update -y
 sudo flatpak update -y
 
