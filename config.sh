@@ -1,6 +1,6 @@
 #!/bin/sh
 #####################################
-#  Bash script that configuers a new 
+#  Bash script that configuers a new
 #  linux host system (KDE NEON)
 #####################################
 RED='\033[0;31m'
@@ -10,6 +10,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 echo "${GREEN}${bold}Updating..${NC}${normal}"
+dpkg --add-architecture i386
 pkcon update -y
 flatpak update -y
 
@@ -36,7 +37,7 @@ unzip awscliv2.zip
 ./aws/install
 
 echo "${GREEN}${bold}Installing GCP CLI..${NC}${normal}"
-apt-get install apt-transport-https ca-certificates gnupg
+apt-get install apt-transport-https ca-certificates gnupg -y
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 apt-get update -y && apt-get install google-cloud-cli -y
@@ -46,18 +47,16 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
 apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 apt-get update && apt-get install terraform
 
-echo "${GREEN}${bold}Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, Docker, ffmpeg..${NC}${normal}"
+echo "${GREEN}${bold}Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, Docker, ffmpeg, wine32..${NC}${normal}"
 flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
-apt-get install kdenlive krita docker ffmpeg -y
+apt-get install kdenlive krita docker ffmpeg wine32 -y
 
 echo "${GREEN}${bold}Downloading github projects to github dir..${NC}${normal}"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
 git clone https://github.com/trevor256/LinuxConfig.git github/LinuxConfig/
 git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
+git clone https://github.com/trevor256/erupt.git github/erupt/
 chmod -R 777 github
-
-echo "${GREEN}${bold}changing theme..${NC}${normal}"
-lookandfeeltool -a org.kde.breezedark.desktop
 
 echo "${GREEN}${bold}Download & install xpen and NVIDIA drivers?${NC}${normal} (y/n)"
 read reply
