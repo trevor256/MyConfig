@@ -12,6 +12,7 @@ normal=$(tput sgr0)
 
 echo "${GREEN}${bold} Updating..${NC}${normal}"
 dpkg --add-architecture i386
+add-apt-repository ppa:slimbook/slimbook
 pkcon update -y
 
 echo "${GREEN}${bold} Installing GO..${NC}${normal}"
@@ -44,7 +45,7 @@ apt-get update -y && apt-get install google-cloud-cli -y
 
 echo "${GREEN}${bold} Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, Docker, ffmpeg, wine32, marktext..${NC}${normal}"
 flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot io.atom.Atom com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter com.github.marktext.marktext -y
-apt-get install kdenlive krita docker ffmpeg wine32 -y
+apt-get install kdenlive krita docker ffmpeg wine32 build-essential slimbookbattery -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
