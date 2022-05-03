@@ -1,7 +1,7 @@
 #!/bin/sh
 #####################################
 #  Bash script that configuers a new
-#  Linux host system (KDE NEON)
+#  Linux host system (all debian based)
 #  Author https://github.com/trevor256
 #####################################
 RED='\033[0;31m'
