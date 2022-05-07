@@ -12,7 +12,6 @@ normal=$(tput sgr0)
 
 echo "${GREEN}${bold} Updating..${NC}${normal}"
 dpkg --add-architecture i386
-add-apt-repository ppa:slimbook/slimbook
 pkcon update -y
 
 echo "${GREEN}${bold} Installing GO..${NC}${normal}"
