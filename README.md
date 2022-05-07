@@ -1,7 +1,7 @@
 # script for configuring new KDE Neon install
 ### Download & Run
 ```
-curl -L https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh -o config.sh && sudo sh config.sh
+curl -L https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh -o config.sh && sh config.sh
 ```
 Script will
  1. dpkg --add-architecture i386
