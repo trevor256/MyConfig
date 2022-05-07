@@ -4,13 +4,12 @@
 sudo wget https://github.com/trevor256/LinuxConfig/blob/main/config.sh | sh config.sh
 ```
 Script will
- 1. changes theme to kde.breezedark
- 2. update flatpak, pkcon
+ 1. dpkg --add-architecture i386
+ 2. update, pkcon
  3. installs languages GO, Rust, Node-17
- 4. installs aws, gcp, terraform cli
+ 4. installs aws & gcp cli
  5. flatpak installs blender, Inkscape, easyssh, gnomeBoxes, godotengine
- 6. apt-get installs kdenlive, krita, docker, ffmpeg, wine32
- 7. dpkg --add-architecture i386
+ 6. apt-get installs kdenlive, krita, docker, ffmpeg, wine32, kate
  8. git clones github projects
  9. ask to install drivers xpen, nvidia-510
  10. removes xpen.deb
