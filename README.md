@@ -1,7 +1,8 @@
 # script for configuring new KDE Neon install
 ### Download & Run
 ```
-sudo wget https://github.com/trevor256/LinuxConfig/blob/main/config.sh | sh config.sh
+wget https://github.com/trevor256/LinuxConfig/blob/main/config.sh
+sudo sh config.sh
 ```
 Script will
  1. dpkg --add-architecture i386
