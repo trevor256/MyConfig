@@ -41,7 +41,7 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
-echo "${GREEN}${bold} Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, Docker, ffmpeg, wine32, marktext..${NC}${normal}"
+echo "${GREEN}${bold} Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, marktext, kdenlive, krita, Docker, ffmpeg, wine32, build-essential, kate..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter com.github.marktext.marktext -y
 sudo apt-get install kdenlive krita docker ffmpeg wine32 build-essential kate -y
 
@@ -77,7 +77,7 @@ echo -n "${RED}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
 read reply
   if [ "$reply" = y -o "$reply" = Y ]
    then
-      #setting display settings to 2560x1440 164Hz..
+      #display settings to 2560x1440 164Hz..
         xrandr --output DP-2 --mode 2560x1440 --rate 164.06
         rm -- "$0"
         reboot
