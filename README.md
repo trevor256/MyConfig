@@ -8,8 +8,8 @@ Script will
  2. pkcon, flatpak update
  3. installs languages GO, Rust, Node-17/npm/yarn
  4. installs aws & gcp cli
- 5. flatpak install blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, marktext
- 6. apt-get install  kdenlive, krita, Docker, ffmpeg, wine32, build-essential, kate
+ 5. flatpak install blender, Inkscape, libreoffice, slack, discord, gnomeBoxes, godotengine, videodownloader, Nixwriter
+ 6. apt-get install  kdenlive, krita, ffmpeg, wine32, build-essential, kate
  8. git clones github projects
  9. installs drivers for xpen
  10. asks to auto install nvidia-510
