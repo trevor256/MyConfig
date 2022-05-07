@@ -41,8 +41,8 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
-echo "${GREEN}${bold} Installing blender, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, ffmpeg, wine32, build-essential, kate..${NC}${normal}"
-sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
+echo "${GREEN}${bold} Installing blender, libreoffice, slack, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, ffmpeg, wine32, build-essential, kate..${NC}${normal}"
+sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.slack.Slack com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
 sudo apt-get install kdenlive krita ffmpeg wine32 build-essential kate -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
