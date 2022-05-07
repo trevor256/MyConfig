@@ -15,5 +15,5 @@ Script will
  10. asks to auto install nvidia-510
  11. changes theme to breezedark 
  12. removes xpen.deb
- 13. updates pkcon
+ 13. pkcon, flatpak update
  14. asks to remove the script changes display settings to 2560x1440 164Hz and reboots
