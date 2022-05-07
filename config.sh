@@ -43,7 +43,7 @@ sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN}${bold} Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, Docker, ffmpeg, wine32, marktext..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter com.github.marktext.marktext -y
-sudo apt-get install kdenlive krita docker ffmpeg wine32 build-essential -y
+sudo apt-get install kdenlive krita docker ffmpeg wine32 build-essential kate -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
