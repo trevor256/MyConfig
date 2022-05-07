@@ -64,7 +64,7 @@ echo "${GREEN}${bold} Install NVIDIA drivers?${NC}${normal} (y/n)"
 read reply
  if [ "$reply" = y -o "$reply" = Y ]
    then
-      apt-get install nvidia-driver-510 -y
+      sudo ubuntu-drivers autoinstall
    else
       echo "${RED}${bold} Drivers not installed${NC}${normal}"
    fi
