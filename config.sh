@@ -41,9 +41,9 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
-echo "${GREEN}${bold} Installing blender, Inkscape, easyssh, gnomeBoxes, godotengine, videodownloader, Nixwriter, marktext, kdenlive, krita, Docker, ffmpeg, wine32, build-essential, kate..${NC}${normal}"
-sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape com.github.muriloventuroso.easyssh org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter com.github.marktext.marktext -y
-sudo apt-get install kdenlive krita docker ffmpeg wine32 build-essential kate -y
+echo "${GREEN}${bold} Installing blender, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, ffmpeg, wine32, build-essential, kate..${NC}${normal}"
+sudo flatpak install flathub org.blender.Blender org.inkscape.Inkscape org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
+sudo apt-get install kdenlive krita ffmpeg wine32 build-essential kate -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
@@ -74,7 +74,7 @@ sudo rm xpen.deb
 sudo pkcon update -y
 sudo flatpak update -y
 
-echo -n "${RED}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
+echo -n "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
 read reply
   if [ "$reply" = y -o "$reply" = Y ]
    then
