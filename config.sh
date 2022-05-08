@@ -18,8 +18,8 @@ sudo flatpak update -y
 echo "${GREEN}${bold} Installing GO..${NC}${normal}"
 curl -OL https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.18.1.linux-amd64.tar.gz
-sudo echo 'export PATH=$PATH:/usr/local/go/bin' >>~/.profile
-source ~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin" >>~/.profile
+. ~/.profile
 
 echo "${GREEN}${bold} Installing Rust..${NC}${normal}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -43,7 +43,8 @@ sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN}${bold} Installing blender, libreoffice, slack, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, ffmpeg, wine32, build-essential, kate..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.slack.Slack com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
-sudo apt-get install kdenlive krita ffmpeg wine32 build-essential kate -y
+sudo apt-get install kdenlive krita ffmpeg wine32 build-essential kate shellcheck flake8 cppcheck -y
+
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
@@ -60,8 +61,8 @@ curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.d
 sudo dpkg -i xpen.deb
 
 echo "${GREEN}${bold} Install NVIDIA drivers?${NC}${normal} (y/n)"
-read reply
- if [ "$reply" = y -o "$reply" = Y ]
+read -r reply
+ if [ "$reply" = y ] || [ "$reply" = Y ]
    then
       sudo ubuntu-drivers autoinstall
    else
@@ -74,9 +75,9 @@ sudo rm xpen.deb
 sudo pkcon update -y
 sudo flatpak update -y
 
-echo -n "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
-read reply
-  if [ "$reply" = y -o "$reply" = Y ]
+echo "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
+read -r reply
+  if [ "$reply" = y ] || [ "$reply" = Y ]
    then
       #display settings to 2560x1440 164Hz..
         xrandr --output DP-2 --mode 2560x1440 --rate 164.06
