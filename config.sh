@@ -54,6 +54,7 @@ git clone https://github.com/trevor256/erupt-0.2.git github/erupt-0.2/
 git clone https://github.com/trevor256/AutoBlender.git github/AutoBlender/
 git clone https://github.com/trevor256/trevdev-token github/trevdev-token/
 git clone https://github.com/trevor256/CloudServerHandler.git github/CloudServerHandler/
+git clone https://github.com/trevor256/MinecraftServer.git github/MinecraftServer/
 chmod -R 777 github
 
 echo "${GREEN}${bold} Install Xpen drivers..${NC}${normal}"
