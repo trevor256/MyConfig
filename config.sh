@@ -50,10 +50,11 @@ echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
 git clone https://github.com/trevor256/LinuxConfig.git github/LinuxConfig/
 git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
-git clone https://github.com/trevor256/erupt.git github/erupt/
+git clone https://github.com/trevor256/erupt-0.2.git github/erupt-0.2/
 git clone https://github.com/trevor256/go2cloud.git github/go2cloud/
 git clone https://github.com/trevor256/AutoBlender.git github/AutoBlender/
 git clone https://github.com/trevor256/trevdev-token github/trevdev-token/
+git clone https://github.com/trevor256/CloudServerHandler.git github/CloudServerHandler/
 chmod -R 777 github
 
 echo "${GREEN}${bold} Install Xpen drivers..${NC}${normal}"
