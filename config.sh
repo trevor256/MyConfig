@@ -43,7 +43,7 @@ sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN}${bold} Installing blender, libreoffice, slack, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, ffmpeg, wine32, build-essential, kate, nmap, lynis ..${NC}${normal}"
 sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.slack.Slack com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
-sudo apt-get install kdenlive krita ffmpeg wine32 build-essential kate shellcheck flake8 cppcheck nmap lynis -y
+sudo apt-get install kdenlive krita ffmpeg wine32 build-essential kate shellcheck flake8 cppcheck nmap lynis rkhunter -y
 
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
