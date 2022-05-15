@@ -8,12 +8,12 @@ Script will
  2. pkcon, flatpak update
  3. installs languages GO, Rust, Node-17/npm/yarn
  4. installs aws & gcp cli
- 5. flatpak install blender, Inkscape, libreoffice, slack, discord, gnomeBoxes, godotengine, videodownloader, Nixwriter
- 6. apt-get install  kdenlive, krita, ffmpeg, wine32, build-essential, kate
- 8. git clones github projects
+ 5. flatpak install blender, Inkscape, libreoffice, discord, gnomeBoxes, godotengine, videodownloader, Nixwriter
+ 6. apt-get install  kdenlive, krita, ffmpeg, wine32, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter
+ 8. config git and clones github projects
  9. installs drivers for xpen
- 10. asks to auto install nvidia-510
+ 10. asks to auto install nvidia driver
  11. changes theme to breezedark 
- 12. removes xpen.deb
+ 12. removes xpen.deb go.gz awscliv2.zip
  13. pkcon, flatpak update
  14. asks to remove the script changes display settings to 2560x1440 164Hz and reboots
