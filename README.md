@@ -9,7 +9,7 @@ Script will
  3. installs languages GO, Rust, Node-17/npm/yarn
  4. installs aws & gcp cli
  5. flatpak install blender, Inkscape, libreoffice, discord, gnomeBoxes, godotengine, videodownloader, Nixwriter
- 6. apt-get install  kdenlive, krita, ffmpeg, wine32, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter
+ 6. apt-get install  kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter
  8. config git and clones github projects
  9. installs drivers for xpen
  10. asks to auto install nvidia driver
