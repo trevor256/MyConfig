@@ -11,7 +11,6 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 echo "${GREEN}${bold} Updating..${NC}${normal}"
-sudo dpkg --add-architecture i386
 sudo pkcon update -y
 sudo flatpak update -y
 
@@ -74,7 +73,7 @@ read -r reply
 
 echo "${GREEN}${bold} Finishing up..${NC}${normal}"
 lookandfeeltool -a 'org.kde.breezedark.desktop'
-sudo rm xpen.deb
+sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
 sudo pkcon update -y
 sudo flatpak update -y
 
