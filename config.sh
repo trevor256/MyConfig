@@ -41,12 +41,14 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
-echo "${GREEN}${bold} Installing blender, libreoffice, slack, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, kdenlive, krita, ffmpeg, wine32, build-essential, kate, nmap, lynis, steam ..${NC}${normal}"
-sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.slack.Slack com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
+echo "${GREEN}${bold} Installing blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, 
+kdenlive, krita, ffmpeg, wine32, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter..${NC}${normal}"
+sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
 sudo apt-get install kdenlive krita ffmpeg wine32 build-essential kate shellcheck flake8 cppcheck nmap lynis rkhunter -y
 
-
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
+git config --global user.name "trevor256"
+git config --global user.email "256trevor@gmail.com"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
 git clone https://github.com/trevor256/LinuxConfig.git github/LinuxConfig/
 git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
