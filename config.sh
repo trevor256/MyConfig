@@ -67,8 +67,8 @@ read -r reply
  if [ "$reply" = y ] || [ "$reply" = Y ]
    then
       sudo add-apt-repository ppa:graphics-drivers/ppa
-      sudo apt update
-      sudo ubuntu-drivers autoinstall
+      sudo apt update -y 
+      sudo apt-get install nvidia-driver-510 -y
    else
       echo "${RED}${bold} Drivers not installed${NC}${normal}"
    fi
