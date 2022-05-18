@@ -1,7 +1,7 @@
 # Script to configure new [KDE Neon](https://neon.kde.org/download) install
 ### Download & Run
 ```
-curl -L https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh -o config.sh && sh config.sh
+curl -L https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh -o c.sh && sh c.sh
 ```
 Script will
  1. pkcon, flatpak update
