@@ -42,7 +42,7 @@ sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter, zenkit
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, libllvm6.0 ..${NC}${normal}"
-sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck flake8 cppcheck nmap lynis rkhunter libllvm6.0 -y
+sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck flake8 cppcheck nmap lynis rkhunter -y
 sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
@@ -62,7 +62,6 @@ echo "${GREEN}${bold} Install Xpen and other drivers..${NC}${normal}"
 curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
 sudo dpkg -i xpen.deb
 sudo ubuntu-drivers autoinstall
-sudo prime-select nvidia
 
 echo "${GREEN}${bold} Finishing up..${NC}${normal}"
 lookandfeeltool -a 'org.kde.breezedark.desktop'
@@ -75,9 +74,9 @@ echo "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
 read -r reply
   if [ "$reply" = y ] || [ "$reply" = Y ]
    then
-      #display settings to 2560x1440 164Hz..
-        xrandr --output DP-2 --mode 2560x1440 --rate 164.06
         rm -- "$0"
+        #display settings to 2560x1440 164Hz..
+        xrandr --output DP-2 --mode 2560x1440 --rate 164.06
         reboot
     else
        echo "${RED}${bold}  Stopped reboot and config.sh script not removed${NC}${normal}"
