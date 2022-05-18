@@ -61,7 +61,7 @@ chmod -R 777 github
 echo "${GREEN}${bold} Install Xpen and other drivers..${NC}${normal}"
 curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
 sudo dpkg -i xpen.deb
-sudo ubuntu-drivers autoinstall -y
+sudo ubuntu-drivers autoinstall
 
 echo "${GREEN}${bold} Finishing up..${NC}${normal}"
 lookandfeeltool -a 'org.kde.breezedark.desktop'
