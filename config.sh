@@ -69,6 +69,7 @@ sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
 sudo apt autoremove -y
 sudo pkcon update -y
 sudo flatpak update -y
+sudo rkhunter -c -l --sk
 
 echo "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
 read -r reply
