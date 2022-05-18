@@ -62,11 +62,11 @@ echo "${GREEN}${bold} Install Xpen and other drivers..${NC}${normal}"
 curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
 sudo dpkg -i xpen.deb
 sudo ubuntu-drivers autoinstall
+sudo prime-select nvidia
 
 echo "${GREEN}${bold} Finishing up..${NC}${normal}"
 lookandfeeltool -a 'org.kde.breezedark.desktop'
 sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
-sudo apt autoremove -y
 sudo pkcon update -y
 sudo flatpak update -y
 sudo rkhunter -c -l --sk
