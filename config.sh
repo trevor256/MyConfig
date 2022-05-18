@@ -66,7 +66,7 @@ sudo ubuntu-drivers autoinstall
 echo "${GREEN}${bold} Finishing up..${NC}${normal}"
 lookandfeeltool -a 'org.kde.breezedark.desktop'
 sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
-sudo apt autoremove -y
+#sudo apt autoremove -y
 sudo pkcon update -y
 sudo flatpak update -y
 sudo rkhunter -c -l --sk
