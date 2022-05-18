@@ -40,10 +40,10 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
-echo "${GREEN}${bold} Installing blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, 
-kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter, zenkit..${NC}${normal}"
-sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
+echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter, zenkit
+blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, ..${NC}${normal}"
 sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck flake8 cppcheck nmap lynis rkhunter -y
+sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git config --global user.name "trevor256"
@@ -58,18 +58,10 @@ git clone https://github.com/trevor256/CloudServerHandler.git github/CloudServer
 git clone https://github.com/trevor256/MinecraftServer.git github/MinecraftServer/
 chmod -R 777 github
 
-echo "${GREEN}${bold} Install Xpen drivers..${NC}${normal}"
+echo "${GREEN}${bold} Install Xpen and other drivers..${NC}${normal}"
 curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
 sudo dpkg -i xpen.deb
-
-echo "${GREEN}${bold} Install NVIDIA drivers?${NC}${normal} (y/n)"
-read -r reply
- if [ "$reply" = y ] || [ "$reply" = Y ]
-   then
-      sudo ubuntu-drivers autoinstall -y
-   else
-      echo "${RED}${bold} Drivers not installed${NC}${normal}"
-   fi
+sudo ubuntu-drivers autoinstall -y
 
 echo "${GREEN}${bold} Finishing up..${NC}${normal}"
 lookandfeeltool -a 'org.kde.breezedark.desktop'
