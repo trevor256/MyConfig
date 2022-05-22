@@ -9,8 +9,8 @@ Script will
  3. installs aws & gcp cli
  4. apt-get install  kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter 
  5. flatpak install blender, Inkscape, libreoffice, discord, gnomeBoxes, godotengine, videodownloader, Nixwriter
- 6. config git and clones github projects
- 7. installs drivers for xpen auto install driver (like nvidia )
+ 6. config git user and clones github projects
+ 7. installs drivers for xpen auto install driver (like nvidia)
  8. changes theme to breezedark 
  9. removes xpen.deb go.gz awscliv2.zip
  10. pkcon, flatpak update
