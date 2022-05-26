@@ -40,9 +40,9 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
-echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, lynis, rkhunter, zenkit
+echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, zenkit
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, libllvm6.0, Audacity, OBS ..${NC}${normal}"
-sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck flake8 cppcheck nmap lynis rkhunter -y
+sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck flake8 cppcheck nmap -y
 sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter org.audacityteam.Audacity com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
@@ -61,15 +61,23 @@ chmod -R 777 github
 echo "${GREEN}${bold} Install Xpen and other drivers..${NC}${normal}"
 curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
 sudo dpkg -i xpen.deb
-sudo apt-install nvidia-driver-510 
+sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
+
+echo "${GREEN}${bold} install nvidia driver?${NC}${normal} (y/n)"
+read -r reply
+  if [ "$reply" = y ] || [ "$reply" = Y ]
+   then
+      sudo apt-install nvidia-driver-510 
+    else
+       echo "${RED}${bold}  nvidia driver no installed${NC}${normal}"
+    fi
 
 echo "${GREEN}${bold} Finishing up..${NC}${normal}"
 lookandfeeltool -a 'org.kde.breezedark.desktop'
-sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
+
 sudo pkcon update -y
 sudo flatpak update -y
 sudo flatpak upgrade -y
-sudo rkhunter -c -l --sk
 
 echo "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
 read -r reply
