@@ -58,23 +58,22 @@ git clone https://github.com/trevor256/CloudServerHandler.git github/CloudServer
 git clone https://github.com/trevor256/MinecraftServer.git github/MinecraftServer/
 chmod -R 777 github
 
-echo "${GREEN}${bold} Install Xpen and other drivers..${NC}${normal}"
+echo "${GREEN}${bold} Install Xpen${NC}${normal}"
 curl https://www.xp-pen.com/download/file/id/1949/pid/819/ext/deb.html -o xpen.deb
 sudo dpkg -i xpen.deb
 sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
+lookandfeeltool -a 'org.kde.breezedark.desktop'
 
 echo "${GREEN}${bold} install nvidia driver?${NC}${normal} (y/n)"
 read -r reply
   if [ "$reply" = y ] || [ "$reply" = Y ]
    then
-      sudo apt-install nvidia-driver-510 
+      sudo apt-get install nvidia-driver-510 
     else
        echo "${RED}${bold}  nvidia driver no installed${NC}${normal}"
     fi
 
-echo "${GREEN}${bold} Finishing up..${NC}${normal}"
-lookandfeeltool -a 'org.kde.breezedark.desktop'
-
+echo "${GREEN}${bold} last updates......${NC}${normal}"
 sudo pkcon update -y
 sudo flatpak update -y
 sudo flatpak upgrade -y
