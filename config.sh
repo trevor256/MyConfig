@@ -84,7 +84,7 @@ read -r reply
    then
         rm -- "$0"
         #display settings to 2560x1440 164Hz..
-        xrandr --output DP-2 --mode 2560x1440 --rate 164.06
+        xrandr --output DP-1 --mode 2560x1440 --rate 164.06
         reboot
     else
        echo "${RED}${bold}  Stopped reboot and config.sh script not removed${NC}${normal}"
