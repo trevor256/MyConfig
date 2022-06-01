@@ -40,6 +40,14 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
+echo "${GREEN}${bold} Installing Azure CLI..${NC}${normal}"
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+echo "${GREEN}${bold} Installing Terraform CLI..${NC}${normal}"
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install terraform
+        
 echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, zenkit
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, libllvm6.0, Audacity, OBS ..${NC}${normal}"
 sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck flake8 cppcheck nmap -y
