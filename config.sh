@@ -48,9 +48,10 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install terraform
         
-echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, zenkit, moc, moc-ffmpeg-plugin, nvim, htop, moc, browsh
+echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, flake8, cppcheck, nmap, 
+zenkit, moc, moc-ffmpeg-plugin, nvim, htop, moc, browsh, fzf
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, libllvm6.0, Audacity, OBS ..${NC}${normal}"
-sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck flake8 cppcheck nmap moc moc-ffmpeg-plugin nvim htop moc browsh -y
+sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck flake8 cppcheck nmap moc moc-ffmpeg-plugin nvim htop moc browsh fzf -y
 sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter org.audacityteam.Audacity com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
