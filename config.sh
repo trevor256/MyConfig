@@ -1,9 +1,9 @@
 #!/bin/sh
-#####################################
-#  Bash script that configuers a new
-#  Linux host system (KDE NEON)
+########################################
 #  Author https://github.com/trevor256
-#####################################
+#  script configs new system
+#  Linux OS (KDE NEON)
+########################################
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
