@@ -12,7 +12,6 @@ normal=$(tput sgr0)
 
 echo "${GREEN}${bold} Updating..${NC}${normal}"
 sudo pkcon update -y
-sudo flatpak update -y
 
 echo "${GREEN}${bold} Installing GO..${NC}${normal}"
 curl -OL https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
@@ -48,7 +47,7 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install terraform
         
-echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, nmap, zenkit, moc, moc-ffmpeg-plugin, nvim, htop, moc, browsh, fzf
+echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, nmap, moc, moc-ffmpeg-plugin, nvim, htop, moc, browsh, fzf
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, libllvm6.0, Audacity, OBS ..${NC}${normal}"
 sudo apt-get install kdenlive krita ffmpeg build-essential kate shellcheck nmap moc moc-ffmpeg-plugin nvim htop moc browsh fzf -y
 sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter org.audacityteam.Audacity com.obsproject.Studio -y
@@ -83,16 +82,12 @@ read -r reply
 
 echo "${GREEN}${bold} last updates......${NC}${normal}"
 sudo pkcon update -y
-sudo flatpak update -y
-sudo flatpak upgrade -y
 
 echo "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
 read -r reply
   if [ "$reply" = y ] || [ "$reply" = Y ]
    then
         rm -- "$0"
-        #display settings to 2560x1440 164Hz..
-        xrandr --output DP-1 --mode 2560x1440 --rate 164.06
         reboot
     else
        echo "${RED}${bold}  Stopped reboot and config.sh script not removed${NC}${normal}"
