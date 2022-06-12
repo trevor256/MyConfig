@@ -77,7 +77,7 @@ read -r reply
    then
       sudo apt-get install nvidia-driver-510 
     else
-       echo "${RED}${bold}  nvidia driver no installed${NC}${normal}"
+       echo "${RED}${bold}  nvidia driver not installed${NC}${normal}"
     fi
 
 echo "${GREEN}${bold} last updates......${NC}${normal}"
