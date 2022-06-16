@@ -1,7 +1,7 @@
 # Auto Configure Linux [KDE Neon](https://neon.kde.org/download) <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/config.svg">
 ### Download & Run
 ```
-curl -L https://raw.githubusercontent.com/trevor256/MyLinuxConfig/main/config.sh -o c.sh && sh c.sh
+curl -L https://raw.githubusercontent.com/trevor256/LinuxConfig/main/config.sh -o c.sh && sh c.sh
 ```
 Script will
  1. pkcon update
