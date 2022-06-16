@@ -1,4 +1,4 @@
-# Auto Configure New Linux [KDE Neon](https://neon.kde.org/download) Install <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/config.svg">
+# Auto Configure Linux [KDE Neon](https://neon.kde.org/download) <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/config.svg">
 ### Download & Run
 ```
 curl -L https://raw.githubusercontent.com/trevor256/MyLinuxConfig/main/config.sh -o c.sh && sh c.sh
