@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ########################################
 #  Author https://github.com/trevor256
 #  script configs new system
@@ -47,9 +47,9 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install terraform
         
-echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, kate, shellcheck, nmap, moc, moc-ffmpeg-plugin, vim, htop, moc, fzf
+echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, kate, shellcheck, nmap, moc, moc-ffmpeg-plugin, vim
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, libllvm6.0, Audacity, OBS ..${NC}${normal}"
-sudo apt-get install kdenlive krita ktorrent ffmpeg build-essential kate shellcheck nmap moc moc-ffmpeg-plugin vim htop moc fzf -y
+sudo apt-get install kdenlive krita ktorrent ffmpeg build-essential kate shellcheck nmap moc moc-ffmpeg-plugin vim -y
 sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader com.gitlab.adnan338.Nixwriter org.audacityteam.Audacity com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
