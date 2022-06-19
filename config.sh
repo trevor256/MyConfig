@@ -74,7 +74,7 @@ echo "${GREEN}${bold} install nvidia driver?${NC}${normal} (y/n)"
 read -r reply
   if [ "$reply" = y ] || [ "$reply" = Y ]
    then
-      sudo apt-get install nvidia-driver-510 
+      sudo apt-get install nvidia-driver-510 -y
     else
        echo "${RED}${bold}  nvidia driver not installed${NC}${normal}"
     fi
