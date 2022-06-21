@@ -49,8 +49,8 @@ sudo apt-get update && sudo apt-get install terraform
         
 echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, kate, shellcheck, nmap, moc, moc-ffmpeg-plugin, vim, ktorrent
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, bootqt, libllvm6.0, Audacity, OBS ..${NC}${normal}"
-sudo apt-get install kdenlive krita ktorrent ffmpeg build-essential kate shellcheck nmap moc moc-ffmpeg-plugin vim ktorrent -y
-sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader io.github.giantpinkrobots.bootqt org.audacityteam.Audacity com.obsproject.Studio -y
+sudo apt-get install kdenlive ktorrent ffmpeg build-essential kate shellcheck nmap moc moc-ffmpeg-plugin vim ktorrent -y
+sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.kde.krita org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader io.github.giantpinkrobots.bootqt org.audacityteam.Audacity com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git config --global user.name "trevor256"
