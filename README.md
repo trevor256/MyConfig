@@ -8,7 +8,7 @@ Script will
  2. installs GO, Rust, Node-17/npm/yarn
  3. installs aws, azure, gcp, and terraform cli
  4. apt-get install  kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, nmap, moc, moc-ffmpeg-plugin, nvim, htop, moc, browsh, fzf
- 5. flatpak install blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, libllvm6.0, Audacity, OBS
+ 5. flatpak install blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, Nixwriter, libllvm6.0, Audacity, OBS, krita
  6. config git user and clones my github projects 
  7. installs drivers for xpen 
  8. changes theme to breezedark 
