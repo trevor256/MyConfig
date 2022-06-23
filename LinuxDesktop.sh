@@ -47,16 +47,16 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install terraform
         
-echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, kate, shellcheck, nmap, moc, moc-ffmpeg-plugin, vim, ktorrent
-blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, bootqt, libllvm6.0, Audacity, OBS ..${NC}${normal}"
-sudo apt-get install kdenlive ktorrent ffmpeg build-essential kate shellcheck nmap moc moc-ffmpeg-plugin vim ktorrent -y
-sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.kde.krita org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader io.github.giantpinkrobots.bootqt org.audacityteam.Audacity com.obsproject.Studio -y
+echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, vim, nvim, ktorrent
+blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, bootqt, libllvm6.0, Audacity, OBS, marktext..${NC}${normal}"
+sudo apt-get install ktorrent ffmpeg build-essential nmap moc moc-ffmpeg-plugin vim ktorrent -y
+sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader io.github.giantpinkrobots.bootqt org.audacityteam.Audacity com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
-git clone https://github.com/trevor256/LinuxConfig.git github/LinuxConfig/
+git clone https://github.com/trevor256/LinuxConfig.git github/MyConfig/
 git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
 git clone https://github.com/trevor256/erupt-0.2.git github/erupt-0.2/
 git clone https://github.com/trevor256/AutoBlender.git github/AutoBlender/
@@ -86,7 +86,6 @@ echo "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
 read -r reply
   if [ "$reply" = y ] || [ "$reply" = Y ]
    then
-        rm -- "$0"
         reboot
     else
        echo "${RED}${bold}  Stopped reboot and config.sh script not removed${NC}${normal}"
