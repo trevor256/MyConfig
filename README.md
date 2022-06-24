@@ -29,7 +29,7 @@ Script will
   4. apt-get install  kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, nmap, moc, moc-ffmpeg-plugin, nvim, htop, fzf
   
 
-# Auto Configure Windows Desktop [10](https://neon.kde.org/download) <img align="right" width="80px" src="  https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/win.svg">
+# Auto Configure Windows Desktop [10](https://neon.kde.org/download) <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/win.svg">
 ```
 . { iwr -useb https://raw.githubusercontent.com/trevor256/MyConfig/main/WindowsDesktop.ps1 } | iex; install
 ```
