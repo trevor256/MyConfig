@@ -13,12 +13,24 @@ normal=$(tput sgr0)
 echo "${GREEN}${bold} Updating..${NC}${normal}"
 sudo dnf upgrade --refresh -y
 
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+[google-cloud-cli]
+name=Google Cloud CLI
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el8-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+
 echo "${GREEN}${bold} Installing go rust cargo nodejs awscli google-cloud-cli azure-cli..${NC}${normal}"
-sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli azure-cli 
-        
+sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli azure-cli google-cloud-cli
+ 
 echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, vim, nvim, ktorrent
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, bootqt, libllvm6.0, Audacity, OBS, marktext..${NC}${normal}"
 sudo dnf install ffmpeg build-essential nmap moc moc-ffmpeg-plugin -y
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
 sudo flatpak install flathub org.kde.ktorrent org.vim.Vim org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader io.github.giantpinkrobots.bootqt org.audacityteam.Audacity com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
@@ -49,5 +61,4 @@ read -r reply
 
 echo "${GREEN}${bold} rebooting......${NC}${normal}"
 sudo dnf upgrade --refresh -y
-sudo reboot
-    
+reboot
