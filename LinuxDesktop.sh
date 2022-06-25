@@ -49,8 +49,8 @@ sudo apt-get update && sudo apt-get install terraform
         
 echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, vim, nvim, ktorrent
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, bootqt, libllvm6.0, Audacity, OBS, marktext..${NC}${normal}"
-sudo apt-get install ktorrent ffmpeg build-essential nmap moc moc-ffmpeg-plugin vim ktorrent -y
-sudo flatpak install flathub org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader io.github.giantpinkrobots.bootqt org.audacityteam.Audacity com.obsproject.Studio -y
+sudo apt-get install ffmpeg build-essential nmap moc moc-ffmpeg-plugin -y
+sudo flatpak install flathub org.kde.ktorrent org.vim.Vim org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader io.github.giantpinkrobots.bootqt org.audacityteam.Audacity com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git config --global user.name "trevor256"
@@ -79,14 +79,7 @@ read -r reply
        echo "${RED}${bold}  nvidia driver not installed${NC}${normal}"
     fi
 
-echo "${GREEN}${bold} last updates......${NC}${normal}"
+echo "${GREEN}${bold} rebooting......${NC}${normal}"
 sudo pkcon update -y
-
-echo "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
-read -r reply
-  if [ "$reply" = y ] || [ "$reply" = Y ]
-   then
-        reboot
-    else
-       echo "${RED}${bold}  Stopped reboot and config.sh script not removed${NC}${normal}"
-    fi
+sudo reboot
+    
