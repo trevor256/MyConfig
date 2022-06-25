@@ -14,7 +14,7 @@ echo "${GREEN}${bold} Updating..${NC}${normal}"
 sudo dnf upgrade --refresh -y
 
 echo "${GREEN}${bold} Installing go rust cargo nodejs awscli google-cloud-cli azure-cli..${NC}${normal}"
-sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli azure-cli
+sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli azure-cli 
         
 echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, vim, nvim, ktorrent
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, bootqt, libllvm6.0, Audacity, OBS, marktext..${NC}${normal}"
@@ -42,12 +42,12 @@ echo "${GREEN}${bold} install nvidia driver?${NC}${normal} (y/n)"
 read -r reply
   if [ "$reply" = y ] || [ "$reply" = Y ]
    then
-      sudo apt-get install nvidia-driver-510 -y
+      sudo dnf install akmod-nvidia -y
     else
        echo "${RED}${bold}  nvidia driver not installed${NC}${normal}"
     fi
 
 echo "${GREEN}${bold} rebooting......${NC}${normal}"
-sudo pkcon update -y
+sudo dnf upgrade --refresh -y
 sudo reboot
     
