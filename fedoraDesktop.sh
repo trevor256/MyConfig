@@ -29,7 +29,9 @@ sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli azure-cli googl
  
 echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, vim, nvim, ktorrent
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, bootqt, libllvm6.0, Audacity, OBS, marktext..${NC}${normal}"
-# sudo dnf install ffmpeg build-essential nmap moc moc-ffmpeg-plugin -y
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install ffmpeg build-essential nmap moc moc-ffmpeg-plugin -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
 sudo flatpak install flathub org.kde.ktorrent org.vim.Vim org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.obsproject.Studio -y
 
@@ -47,7 +49,7 @@ chmod -R 777 github
 
 echo "${GREEN}${bold} Install Xpen${NC}${normal}"
 curl https://www.xp-pen.com/download/file/id/1948/pid/819/ext/rpm.html -o xpen.rpm
-sudo dpkg -i xpen.rpm
+sudo rpm -i xpen.rpm
 sudo rm xpen.rpm
 
 echo "${GREEN}${bold} install nvidia driver?${NC}${normal} (y/n)"
