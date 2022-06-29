@@ -59,9 +59,6 @@ git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
 git clone https://github.com/trevor256/LinuxConfig.git github/MyConfig/
 git clone https://github.com/trevor256/FileCodify.git github/FileCodify/
 git clone https://github.com/trevor256/erupt-0.2.git github/erupt-0.2/
-git clone https://github.com/trevor256/AutoBlender.git github/AutoBlender/
-git clone https://github.com/trevor256/trevdev-token github/trevdev-token/
-git clone https://github.com/trevor256/MinecraftServer.git github/MinecraftServer/
 chmod -R 777 github
 
 echo "${GREEN}${bold} Install Xpen${NC}${normal}"
