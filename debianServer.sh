@@ -16,20 +16,39 @@ normal=$(tput sgr0) #normal text
 echo "${GREEN}${bold} Updating..${NC}${normal}"
 
 sudo apt-get update && sudo apt-get upgrade
-sudo apt install kodi ufw 
+sudo apt install kodi ufw samba smbclient cifs-utils
 # https://wiki.debian.org/Kodi
 
-# Rustweb server
-# https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html
-
-reply -r $user 
-adduser $user
+sudo mkdir /public /private
+sudo printf "[public]
+   comment = Public Folder
+   path = /public
+   writable = yes
+   guest ok = yes
+   guest only = yes
+   force create mode = 775
+   force directory mode = 775
+[private]
+   comment = Private Folder
+   path = /private
+   writable = yes
+   guest ok = no
+   valid users = @smbshare
+   force create mode = 770
+   force directory mode = 770
+   inherit permissions = yes" >> /etc/samba/smb.conf
+sudo groupadd smbshare
+sudo chgrp -R smbshare /private/
+sudo chgrp -R smbshare /public
+sudo chmod 2770 /private/
+sudo chmod 2775 /public
 
 echo "${GREEN}${bold} add users?${NC}${normal} (y/n)"
 read -r reply
   if [ "$reply" = y ] || [ "$reply" = Y ]
    then
-      sudo apt-get install nvidia-driver-510 -y
+      reply -r $user 
+adduser $user
     else
        echo "${RED}${bold}  nvidia driver not installed${NC}${normal}"
     fi
