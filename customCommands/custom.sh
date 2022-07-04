@@ -1,4 +1,4 @@
-#list all files
+#list all files $path .bash_profile
 alias ll="ls -lh"
 
 function update() {
