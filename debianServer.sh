@@ -15,14 +15,21 @@ normal=$(tput sgr0) #normal text
 
 echo "${GREEN}${bold} Updating..${NC}${normal}"
 
+sudo apt-get update && sudo apt-get upgrade
+sudo apt install kodi ufw 
+# https://wiki.debian.org/Kodi
 
+# Rustweb server
+# https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html
 
-echo "${GREEN}${bold}  Remove config.sh script and reboot?${NC}${normal} (y/n)"
+reply -r $user 
+adduser $user
+
+echo "${GREEN}${bold} add users?${NC}${normal} (y/n)"
 read -r reply
   if [ "$reply" = y ] || [ "$reply" = Y ]
    then
-        rm -- "$0"
-        reboot
+      sudo apt-get install nvidia-driver-510 -y
     else
-       echo "${RED}${bold}  Stopped reboot and config.sh script not removed${NC}${normal}"
+       echo "${RED}${bold}  nvidia driver not installed${NC}${normal}"
     fi
