@@ -41,16 +41,16 @@ sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN}${bold} Installing Azure CLI..${NC}${normal}"
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-echo "${GREEN}${bold} Installing Terraform CLI..${NC}${normal}"
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install terraform
         
-echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, nvim, ktorrent
+echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, nvim, ktorrent
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, libllvm6.0, Audacity, OBS, marktext, minecraft..${NC}${normal}"
 sudo apt-get install ffmpeg build-essential nmap moc moc-ffmpeg-plugin -y
-sudo flatpak install flathub org.kde.ktorrent org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.gnome.Boxes com.valvesoftware.Steam org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
+sudo flatpak install flathub org.kde.ktorrent org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.gnome.Boxes org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
+
+echo "${GREEN}${bold} Monero CLI..${NC}${normal}"
+wget https://downloads.getmonero.org/linux64 && tar jxvf linux64 
+# ./monerod
+# ./monero-wallet-cli
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git config --global user.name "trevor256"
@@ -79,4 +79,3 @@ read -r reply
 echo "${GREEN}${bold} rebooting......${NC}${normal}"
 sudo pkcon update -y
 sudo reboot
-    
