@@ -52,6 +52,9 @@ wget https://downloads.getmonero.org/linux64 && tar jxvf linux64
 # ./monerod
 # ./monero-wallet-cli
 
+echo "${GREEN}${bold} Solana CLI..${NC}${normal}"
+sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)"
+
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
