@@ -27,13 +27,13 @@ EOM
 echo "${GREEN}${bold} Installing go rust cargo nodejs awscli google-cloud-cli azure-cli..${NC}${normal}"
 sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli azure-cli google-cloud-cli
  
-echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, vim, nvim, ktorrent
+echo "${GREEN}${bold} Installing kdenlive, ktorrent, krita, ffmpeg, build-essential, nmap, moc, moc-ffmpeg-plugin, nvim, ktorrent
 blender, libreoffice, discord, Inkscape, gnomeBoxes, godotengine, videodownloader, bootqt, libllvm6.0, Audacity, OBS, marktext..${NC}${normal}"
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install ffmpeg build-essential nmap moc moc-ffmpeg-plugin -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
-sudo flatpak install flathub org.kde.ktorrent org.vim.Vim org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.obsproject.Studio -y
+sudo flatpak install flathub org.kde.ktorrent org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Downloading github projects to github dir..${NC}${normal}"
 git config --global user.name "trevor256"
