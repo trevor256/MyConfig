@@ -70,9 +70,6 @@ sudo dpkg -i xpen.deb
 sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
 lookandfeeltool -a 'org.kde.breezedark.desktop'
 
-echo "${GREEN}${bold} Installing custom commands, makeboot${NC}${normal}"
-# run "source .bashrc" to load anything added to .bashrc
-
 printf "function makeboot() {
   wget -nc https://files.kde.org/neon/images/user/20220707-0946/neon-user-20220707-0946.iso -O Downloads/neon.iso
   sudo umount /dev/sda 
