@@ -76,7 +76,6 @@ printf "function makeboot() {
   sudo dd bs=4M if=Downloads/neon.iso of=/dev/sda conv=fdatasync  status=progress
 }
 export -f makeboot" >> .bashrc
-source .bashrc
 
 echo "${GREEN}${bold} install nvidia driver?${NC}${normal} (y/n)"
 read -r reply
