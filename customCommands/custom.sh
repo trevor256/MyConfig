@@ -1,7 +1,9 @@
-#list all files $path .bash_profile
-alias ll="ls -lh"
+# run "source .bashrc" to load anything added to .bashrc
 
 function makeboot() {
-  sudo umount /dev/sd<?><?>  
-  sudo dd bs=4M if=path/to/input.iso of=/dev/sd<?> conv=fdatasync  status=progress
+  wget https://files.kde.org/neon/images/user/20220707-0946/neon-user-20220707-0946.iso -O Downloads/neon.iso
+  lsblk
+  sudo umount /dev/sda 
+  sudo dd bs=4M if=Downloads/neon.iso of=/dev/sda conv=fdatasync  status=progress
 }
+export -f makeboot
