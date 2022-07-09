@@ -43,8 +43,8 @@ echo "${GREEN}${bold} Installing Azure CLI..${NC}${normal}"
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
         
 echo "${GREEN}${bold} Installing kdenlive, krita, ffmpeg, build-essential, moc, moc-ffmpeg-plugin, nvim, ktorrent
-blender, libreoffice, discord, Inkscape, godotengine, videodownloader, libllvm6.0, Audacity, OBS, marktext, minecraft..${NC}${normal}"
-sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin virt-manager -y
+blender, libreoffice, discord, Inkscape, godotengine, videodownloader, libllvm6.0, shellcheck, Audacity, OBS, marktext, minecraft..${NC}${normal}"
+sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin virt-manager shellcheck -y
 sudo flatpak install flathub org.kde.ktorrent org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext org.kde.kdenlive org.inkscape.Inkscape org.kde.krita org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
 
 echo "${GREEN}${bold} Monero CLI..${NC}${normal}"
