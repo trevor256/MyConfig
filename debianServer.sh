@@ -16,7 +16,7 @@ normal=$(tput sgr0) #normal text
 echo "${GREEN}${bold} Updating..${NC}${normal}"
 
 sudo apt-get update && sudo apt-get upgrade
-sudo apt install kodi samba smbclient cifs-utils virt-manager
+sudo apt install kodi samba smbclient cifs-utils virt-manager selinux-basics selinux-policy-default auditd
 # https://wiki.debian.org/Kodi
 
 sudo mkdir /public /private
