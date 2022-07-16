@@ -1,4 +1,4 @@
-# Auto Configure [KDE Neon](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/neon.svg">
+# Configure [KDE Neon](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/neon.svg">
 ```bash
 curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/neonDesktop.sh | sudo bash
 ```
@@ -17,7 +17,7 @@ Script will
   11. pkcon update
   12. asks to reboot
 
-# Auto Configure [Fedora](https://getfedora.org) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/fedora.svg">
+# Configure [Fedora](https://getfedora.org) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/fedora.svg">
 ```bash
 curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/fedoraDesktop.sh | sudo bash
 ```
@@ -36,7 +36,7 @@ Script will
   11. pkcon update
   12. asks to reboot
 
-# Auto Configure Server [Debian 11](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.3.0-amd64-netinst.iso) <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
+# Configure Server [Debian 11](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.3.0-amd64-netinst.iso) <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
 ```bash
 curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/Server.sh | sudo bash
 ```
@@ -47,7 +47,7 @@ Script will
   4. apt-get install  kdenlive, krita, ffmpeg, build-essential, kate, shellcheck, nmap, moc, moc-ffmpeg-plugin, nvim, htop, fzf
   
 
-# Auto Configure Windows [10](https://neon.kde.org/download) Desktop <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/win.svg">
+# Configure Windows [10](https://neon.kde.org/download) Desktop <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/win.svg">
 
 ```powershell
 . { iwr -useb https://raw.githubusercontent.com/trevor256/MyConfig/main/WindowsDesktop.ps1 } | iex; install
