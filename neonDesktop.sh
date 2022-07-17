@@ -48,8 +48,8 @@ wget https://downloads.getmonero.org/linux64 && tar jxvf linux64
 echo "${GREEN} Solana CLI${NC}"
 sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)"
 
-echo "${GREEN} apt install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate${NC}"
-sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate -y
+echo "${GREEN} apt install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate java17${NC}"
+sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate openjdk-17-jdk openjdk-17-jre -y
 echo "${GREEN} flatpak install ktorrent kdenlive Blender LibreOffice Discord nvim marktext Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
 sudo flatpak install flathub org.kde.ktorrent org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord io.neovim.nvim com.github.marktext.marktext -y
 sudo flatpak install org.inkscape.Inkscape org.kde.krita org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
